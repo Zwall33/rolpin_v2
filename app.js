@@ -7,7 +7,6 @@ import logger from 'morgan';
 import indexRouter from './routes/index';
 import dbIndex from './routes/dbroute';
 import cors from 'cors';
-import database from './public/javascripts/db';
 
 var app = express();
 
@@ -18,7 +17,6 @@ app.set('port', process.env.PORT || 4300);
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('*', cors({ origin: '*' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

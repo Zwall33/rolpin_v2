@@ -5,12 +5,13 @@ class Request {
         return sql;           
     }
 
-    static get10ProductSQL() {
+    static get10init_plis() {
         let sql = `SELECT Nb_plis_heure,Nb_stack_jour FROM Production ORDER BY day DESC LIMIT 10`;
         return sql;           
     }
-    static getProductSQL() {
-        let sql = `SELECT Nb_plis_heure,Nb_stack_jour FROM Production ORDER BY day DESC LIMIT 1`;
+
+    static getPlis_stack() {
+        let sql = "SELECT Nb_plis_heure,Nb_stack_jour FROM Production ORDER BY day DESC LIMIT 1";
         return sql;           
     }
 

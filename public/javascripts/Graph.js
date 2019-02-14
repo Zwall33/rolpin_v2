@@ -46,11 +46,7 @@ function dataserie(car){
     }
     return data;
 }
-/*$(function (){
-    $.get('/dbIndex',{},function(row10){
-        alert(row10[8]);
-    });
-});*/
+
 
 $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-Allow-Origin: *" à chrome
     $.get('/dbIndex/Nb_plis_init', {},function(row){// init tab
@@ -60,6 +56,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
             Nb_plis_heure[i] = row[i].Nb_plis_heure;
             j++;
         }
+        
 
         $(function () {/////////////////////////////////// graphique Nb_stack_jour et Nb_plis_heure
             /////////// graph 1 /////////////////////
@@ -74,30 +71,31 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
                         var series = this.series[0];
                         var series1 = this.series[1];
                         setInterval(function (){
-                                        ShiftTab(Nb_stack_jour);
-                                        ShiftTab(Nb_plis_heure);
-                                        $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-Allow-Origin: *" à chrome
-                                            $.get('/dbIndex/Nb_plis_heure', {},function(row){
-                                                z_Temp = row[0].Nb_stack_jour;
-                                                y_Humi = row[0].Nb_plis_heure;
-                                                var x =GetTime(); // current time
-                                                Nb_stack_jour[9] = z_Temp;
-                                                Nb_plis_heure[9] = y_Humi;
-                                                series.addPoint([x, z_Temp], false, true);
-                                                series1.addPoint([x, y_Humi], true, true);
-                                                document.getElementById("stack/jour").innerHTML = z_Temp + ' Stack/jour';
-                                                document.getElementById("plis/heure").innerHTML = y_Humi + ' plis/heure';
-                                            });
-                                        });
-                                    }, inter);
-                        }
+                            
+                            ShiftTab(Nb_stack_jour);
+                            ShiftTab(Nb_plis_heure);
+                            $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-Allow-Origin: *" à chrome
+                                $.get('/dbIndex/Nb_plis_heure', {},function(row){
+                                    z_Temp = row[0].Nb_stack_jour;
+                                    y_Humi = row[0].Nb_plis_heure;
+                                    var x =GetTime(); // current time
+                                    Nb_stack_jour[9] = z_Temp;
+                                    Nb_plis_heure[9] = y_Humi;
+                                    series.addPoint([x, z_Temp], false, true);
+                                    series1.addPoint([x, y_Humi], true, true);
+                                    document.getElementById("stack/jour").innerHTML = z_Temp + ' Stack/jour';
+                                    document.getElementById("plis/heure").innerHTML = y_Humi + ' plis/heure';
+                                });
+                            });
+                        }, inter);
                     }
+                }
                     
-                },
+            },
 
-                time: {
-                    useUTC: false
-                },
+            time: {
+                useUTC: false
+            },
 
         /////////----Legend----////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
