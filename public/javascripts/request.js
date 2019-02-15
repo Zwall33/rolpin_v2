@@ -14,6 +14,5 @@ class Request {
         let sql = "SELECT Nb_plis_heure,Nb_stack_jour FROM Production ORDER BY day DESC LIMIT 1";
         return sql;           
     }
-
 }
 export default Request;

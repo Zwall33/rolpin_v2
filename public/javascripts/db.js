@@ -1,13 +1,15 @@
 import mysql from "mysql";
 
-const pool = mysql.createPool({
+const config = {
     connectionLimit : 10,
     host     : 'localhost',
     user     : 'lea-server',
     password : 'lea-server',
     database : 'test_lea_rolpin',
-    debug    : false 
-});                    
+    debug    : false
+}
+
+const pool = mysql.createPool(config);                    
 
 function executeQuery(sql, callback) {
     pool.getConnection((err,connection) => {
@@ -37,7 +39,7 @@ function query(sql, callback) {
 }
 
 module.exports = {
-    query: query
+    query: query,
 }
 
 /*let conn;
