@@ -3,8 +3,8 @@ var Nb_plis_heure = new Array(10);
 var Nb_stack_jour = new Array(10);
 
 var inter = 5000
-var y_Humi=0;
-var z_Temp=0;
+var y_plis=0;
+var z_stack=0;
 
 function ShiftTab(t){
     for (i = 0; i < 9; i++) {
@@ -47,7 +47,6 @@ function dataserie(car){
     return data;
 }
 
-
 $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-Allow-Origin: *" à chrome
     $.get('/dbIndex/Nb_plis_init', {},function(row){// init tab
         var j = 0;
@@ -62,7 +61,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
             /////////// graph 1 /////////////////////
             var myChart = Highcharts.chart('container', {
                 chart: {
-                    backgroundColor: '#313031',
+                    backgroundColor: '#635e5e',
                     type: 'spline',
                     marginRight: 85,
                     events: {
@@ -76,15 +75,15 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
                             ShiftTab(Nb_plis_heure);
                             $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-Allow-Origin: *" à chrome
                                 $.get('/dbIndex/Nb_plis_heure', {},function(row){
-                                    z_Temp = row[0].Nb_stack_jour;
-                                    y_Humi = row[0].Nb_plis_heure;
+                                    z_stack = row[0].Nb_stack_jour;
+                                    y_plis = row[0].Nb_plis_heure;
                                     var x =GetTime(); // current time
-                                    Nb_stack_jour[9] = z_Temp;
-                                    Nb_plis_heure[9] = y_Humi;
-                                    series.addPoint([x, z_Temp], false, true);
-                                    series1.addPoint([x, y_Humi], true, true);
-                                    document.getElementById("stack/jour").innerHTML = z_Temp + ' Stack/jour';
-                                    document.getElementById("plis/heure").innerHTML = y_Humi + ' plis/heure';
+                                    Nb_stack_jour[9] = z_stack;
+                                    Nb_plis_heure[9] = y_plis;
+                                    series.addPoint([x, z_stack], false, true);
+                                    series1.addPoint([x, y_plis], true, true);
+                                    document.getElementById("stack/jour").innerHTML = z_stack + ' Stack/jour';
+                                    document.getElementById("plis/heure").innerHTML = y_plis + ' plis/heure';
                                 });
                             });
                         }, inter);
@@ -130,6 +129,9 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
                     type: 'datetime',
                     tickPixelInterval: 10,
                     labels: {
+                        style: {
+                            color: '#e0e0e3',
+                        },
                         format: '{value:%H:%M:%S}',
                     }
                 },
@@ -140,7 +142,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
                         color: '#e0e0e3',  
                     },
                     borderColor: '#b8b8b8',
-                    backgroundColor: '#313031',
+                    backgroundColor: '#635e5e',
                     shared : true
                 },
 
@@ -232,7 +234,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
         /////////// graph luminosité /////////////////////
             var Luminosite = Highcharts.chart('graphLuminosite', {
                 chart: {
-                    backgroundColor: '#313031',
+                    backgroundColor: '#635e5e',
                     type: 'spline',
                     marginRight: 85,
                     events: {
@@ -303,7 +305,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
                         color: '#e0e0e3',  
                     },
                     borderColor: '#b8b8b8',
-                    backgroundColor: '#313031',
+                    backgroundColor: '#635e5e',
                     shared : true
                 },
 
@@ -358,7 +360,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
         /////////// graph luminosité /////////////////////
             var Fertilite = Highcharts.chart('graphFertilite', {
                 chart: {
-                    backgroundColor: '#313031',
+                    backgroundColor: '#635e5e',
                     type: 'spline',
                     marginRight: 85,
                     events: {
@@ -429,7 +431,7 @@ $(function(){ //attention blocage CORS donc ajout d'extention "Allow-Control-All
                         color: '#e0e0e3',  
                     },
                     borderColor: '#b8b8b8',
-                    backgroundColor: '#313031',
+                    backgroundColor: '#635e5e',
                     shared : true
                 },
 
