@@ -5,22 +5,44 @@
     <% include partials/head_defaut %> 
   </head>
   <body>
-      <div class=tableur>
+      <h1 class="index">Défauts LEA en temps réel</h1>
+      <div class=tableur2>
+      <table id="defaut_TR" class="display" style="width:100%">
+        <thead>
+          <tr>
+              <th>Défaut</th>
+              <th>Dernière présence</th>
+              <th>Début</th>
+              <th>Fin</th>
+          </tr>
+      </thead>
+      <tfoot>
+          <tr>
+            <th>Défaut</th>
+            <th>Dernière présence</th>
+            <th>Début</th>
+            <th>Fin</th>
+          </tr>
+      </tfoot>
+      </table>
+    </div>
+    <h1 class="index1">Tableau de défauts LEA</h1>
+    <div class=tableur>
       <table id="defaut_table" class="display" style="width:100%">
           <thead>
               <tr>
                   <th>Défaut</th>
-                  <th>Présence</th>
                   <th>Dernière présence</th>
-                  <th>Nombre par jour</th>
+                  <th>Début</th>
+                  <th>Fin</th>
               </tr>
           </thead>
           <tfoot>
               <tr>
                 <th>Défaut</th>
-                <th>Présence</th>
                 <th>Dernière présence</th>
-                <th>Nombre par jour</th>
+                <th>Début</th>
+                <th>Fin</th>
               </tr>
           </tfoot>
       </table>

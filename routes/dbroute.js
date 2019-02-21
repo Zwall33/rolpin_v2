@@ -28,7 +28,16 @@ router.get("/defautLEA", (req, res, next) => {
         if(!err) {
             res.send(row);
         }
-    });    
+    });  
+});
+
+router.get("/defautTrLEA", (req, res, next) => {
+
+    db.query(Request.getDefautTrLEA(), (err, row)=> {
+        if(!err) {
+            res.send(row);
+        }
+    });  
 });
 
 module.exports = router;

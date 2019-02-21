@@ -19,5 +19,10 @@ class Request {
         let sql = "SELECT * FROM Defaut ORDER BY Frequence DESC";
         return sql;
     }
+
+    static getDefautTrLEA(){
+        let sql = "SELECT * FROM defaut_temps_reel ORDER BY id DESC";
+        return sql;
+    }
 }
 export default Request;
