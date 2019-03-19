@@ -40,4 +40,13 @@ router.get("/defautTrLEA", (req, res, next) => {
     });  
 });
 
+router.get("/StockLEA", (req, res, next) => {
+
+    db.query(Request.getStockLEA(), (err, row)=> {
+        if(!err) {
+            res.send(row);
+        }
+    });  
+});
+
 module.exports = router;

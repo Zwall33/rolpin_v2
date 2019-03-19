@@ -5,7 +5,7 @@ const config = {
     host     : 'localhost',
     user     : 'lea-server',
     password : 'lea-server',
-    database : 'test_lea_rolpin',
+    database : 'lea_rolpin',
     debug    : false
 }
 

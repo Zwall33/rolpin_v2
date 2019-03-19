@@ -21,7 +21,12 @@ class Request {
     }
 
     static getDefautTrLEA(){
-        let sql = "SELECT * FROM defaut_temps_reel ORDER BY id DESC";
+        let sql = "SELECT * FROM Defaut ORDER BY id DESC";
+        return sql;
+    }
+
+    static getStockLEA(){
+        let sql = "SELECT Nb_plis_heure,Nb_stack_jour FROM Production";
         return sql;
     }
 }
