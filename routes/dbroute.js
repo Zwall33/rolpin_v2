@@ -49,4 +49,24 @@ router.get("/StockLEA", (req, res, next) => {
     });  
 });
 
+router.get("/ShiftProd", (req, res, next) => {
+
+    db.query(Request.getProdinShift(), (err, row) => {
+        if(!err){
+            res.send(row);
+        }
+    });
+});
+
+router.get("/TotalProd", (req, res, next) => {
+
+    db.query(Request.getProdinTotal(), (err, row) =>{ 
+        if(!err){
+            res.send(row);
+        }
+    });
+});
+
+
+
 module.exports = router;

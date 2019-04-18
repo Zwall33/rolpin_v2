@@ -75,7 +75,7 @@ $(function(){
                                 $.get('/dbIndex/Nb_plis_heure', {},function(row){
                                     z_stack = row[0].Nb_stack_jour;
                                     y_plis = row[0].Nb_plis_heure;
-                                    var x =GetTime(); // current time
+                                    var x =GetTime();
                                     Nb_stack_jour[9] = z_stack;
                                     Nb_plis_heure[9] = y_plis;
                                     series.addPoint([x, z_stack], false, true);

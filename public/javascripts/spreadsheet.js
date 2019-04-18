@@ -81,3 +81,19 @@ setInterval(function(){
     }
   });
 },100*60);
+/*
+var trigger;
+var Query;
+context.set(bit_init) = msg.payload;
+if(trigger != (BitOk = context.get(bit_init) && trigger != msg.payload){
+  context.set(value1) = msg.payload.value1;
+  context.set(bit_ready) = msg.payload;
+  Query = "okokok";
+  return msg.topic = Query;
+}else if((BitOk = context.set(bit_ready) != msg.payload)){
+  value1 = context.get(value1);
+  context.set(bit_ready) = msg.payload;
+  Query = "okokok";
+  return blabla;
+}else context.set(value1) = msg.payload.value1;
+*/

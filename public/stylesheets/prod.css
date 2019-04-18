@@ -65,3 +65,207 @@
   margin-top: 0px;
   margin-left: 0px;
 }
+
+/************************************************************************************************************************************************************/
+
+.placage_equipe{
+  top: 90%;
+    left: 200px;
+    position: absolute;
+    padding:1%;
+    padding-right: 2%;
+    padding-left: 2%;
+  
+    font-size: 185%;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color : #333;
+  
+    background-color: rgba(255, 255, 255, 0.6);
+  
+    border-style:solid;
+    border-width: 2px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
+}
+
+.tableur_plis_equipe{
+  left: 19%;
+  top: 105%;
+  position: absolute;
+  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  height: auto;
+  width: 74%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/************************************************************************************************************************************************************/
+
+.placage_recette{
+  top: 162%;
+  left: 200px;
+  position: absolute;
+  padding:1%;
+  padding-right: 2%;
+  padding-left: 2%;
+
+  font-size: 185%;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color : #333;
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
+}
+
+.tableur_plis_recette{
+  left: 19%;
+  top: 177%;
+  position: absolute;
+  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  height: auto;
+  width: 74%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/************************************************************************************************************************************************************/
+
+.planche_equipe{
+  top: 234%;
+  left: 200px;
+  position: absolute;
+  padding:1%;
+  padding-right: 2%;
+  padding-left: 2%;
+
+  font-size: 185%;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color : #333;
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
+}
+
+.tableur_planche_equipe{
+  left: 19%;
+  top: 249%;
+  position: absolute;
+  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  height: auto;
+  width: 74%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/************************************************************************************************************************************************************/
+
+.planche_recette{
+  top: 306%;
+  left: 200px;
+  position: absolute;
+  padding:1%;
+  padding-right: 2%;
+  padding-left: 2%;
+
+  font-size: 185%;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color : #333;
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
+}
+
+.tableur_planche_recette{
+  left: 19%;
+  top: 321%;
+  position: absolute;
+  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  height: auto;
+  width: 74%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/************************************************************************************************************************************************************/
+
+.pile_equipe{
+  top: 378%;
+  left: 200px;
+  position: absolute;
+  padding:1%;
+  padding-right: 2%;
+  padding-left: 2%;
+
+  font-size: 185%;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color : #333;
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
+}
+
+.tableur_pile_equipe{
+  left: 19%;
+  top: 393%;
+  position: absolute;
+  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  height: auto;
+  width: 74%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/************************************************************************************************************************************************************/
+
+.pile_recette{
+  top: 450%;
+  left: 200px;
+  position: absolute;
+  padding:1%;
+  padding-right: 2%;
+  padding-left: 2%;
+
+  font-size: 185%;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color : #333;
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
+}
+
+.tableur_pile_recette{
+  left: 19%;
+  top: 465%;
+  position: absolute;
+  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  height: auto;
+  width: 74%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
