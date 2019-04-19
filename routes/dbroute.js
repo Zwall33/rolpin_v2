@@ -67,6 +67,24 @@ router.get("/TotalProd", (req, res, next) => {
     });
 });
 
+router.get("/AverageHour",(req, res, next) => {
+
+    db.query(Request.getAverageHeure(), (err, row) =>{
+        if(!err){
+            res.send(row);
+        }
+    });
+});
+
+router.get("/AverageMin",(req, res, next) => {
+
+    db.query(Request.getAverageMin(), (err, row) =>{
+        if(!err){
+            res.send(row);
+        }
+    });
+});
+
 
 
 module.exports = router;

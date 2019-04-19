@@ -6,6 +6,10 @@ var inter = 5000
 var y_plis=0;
 var z_stack=0;
 
+
+//document.getElementById("stack/jour").innerHTML = Nb_stack_jour[9] + ' Stack/jour ';
+
+
 function ShiftTab(t){
     for (i = 0; i < 9; i++) {
         t[i]=t[i+1];  
@@ -35,14 +39,14 @@ function dataserie(car){
         for (i = -9; i <= 0; i += 1) {
             data.push([time + i * inter,Nb_stack_jour[i+9]]);
         }
-        document.getElementById("stack/jour").innerHTML = Nb_stack_jour[9] + 'Stack/jour ';
+        //document.getElementById("stack/jour").innerHTML = Nb_stack_jour[9] + ' Stack/jour ';
     }
     if(car == 'P') {
         ShiftTab(Nb_plis_heure);
         for (i = -9; i <= 0; i += 1) {
             data.push([time + i * inter,Nb_plis_heure[i+9]]);
         }
-        document.getElementById("plis/heure").innerHTML = Nb_plis_heure[9] + 'plis/heure';
+        //document.getElementById("plis/heure").innerHTML = Nb_plis_heure[9] + ' plis/heure';
     }
     return data;
 }
@@ -80,8 +84,12 @@ $(function(){
                                     Nb_plis_heure[9] = y_plis;
                                     series.addPoint([x, z_stack], false, true);
                                     series1.addPoint([x, y_plis], true, true);
-                                    document.getElementById("stack/jour").innerHTML = z_stack + ' Stack/jour';
-                                    document.getElementById("plis/heure").innerHTML = y_plis + ' plis/heure';
+                                });
+                                $.get('/dbIndex/AverageHour', {},function(row){
+                                    document.getElementById("plis/min").innerHTML = row[0].plis + ' plis/heure';
+                                });
+                                $.get('/dbIndex/AverageMin', {},function(row){
+                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' plis/min';
                                 });
                             });
                         }, inter);
