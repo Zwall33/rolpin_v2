@@ -70,27 +70,24 @@ $(function(){
                     load: function () {
                         
                         var series = this.series[0];
-                        var series1 = this.series[1];
                         setInterval(function (){
                             
-                            ShiftTab(Nb_stack_jour);
                             ShiftTab(Nb_plis_heure);
                             $(function(){ 
                                 $.get('/dbIndex/Nb_plis_heure', {},function(row){
-                                    z_stack = row[0].Nb_stack_jour;
                                     y_plis = row[0].Nb_plis_heure;
                                     var x =GetTime();
-                                    Nb_stack_jour[9] = z_stack;
                                     Nb_plis_heure[9] = y_plis;
-                                    series.addPoint([x, z_stack], false, true);
-                                    series1.addPoint([x, y_plis], true, true);
-                                });
+
+                                    series.addPoint([x, y_plis], true, true);
+                                
                                 $.get('/dbIndex/AverageHour', {},function(row){
-                                    document.getElementById("plis/min").innerHTML = row[0].plis + ' plis/heure';
+                                    document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
                                 });
                                 $.get('/dbIndex/AverageMin', {},function(row){
-                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' plis/min';
+                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
                                 });
+                            });
                             });
                         }, inter);
                     }
@@ -161,10 +158,10 @@ $(function(){
                                     style: {
                                         color: '#ff0000',
                                     },
-                                    format : '{value} Stack/j'
+                                    format : '{value} plis/h'
                                 },
                             title: {
-                                text: 'Stack/jour',
+                                text: 'plis/heure',
                     
                                 style: {
                                     color: '#ff0000',
@@ -172,27 +169,6 @@ $(function(){
                                 }
                             }
                             },
-                
-                //----Axe des ordonné N°2  03b9ff----//
-                            {
-                                opposite: true,
-                                lineColor: '#038197',
-                                lineWidth: 3,
-                                labels: {
-                                    style: {
-                                        color: '#038197',    
-                                    },
-                                    format : '{value} plis/h'
-                                },
-                                title: {
-                                    text: 'Plis/heure',
-                    
-                                style: {
-                                    color: '#038197',
-                                    fontWeight : 'bold'
-                                }
-                                }
-                            }
                 ],
 
         /////////----Séies----/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -200,7 +176,7 @@ $(function(){
 
                 //----Séies N°1----//
                 {
-                    name: 'Stack/jour',
+                    name: 'plis/heure',
                     yAxis: 0,
                     data: dataserie('S'),
                     shadow: {
@@ -210,27 +186,12 @@ $(function(){
                     },
                     color: '#ff0000',
                     tooltip:{
-                        valueSuffix : 'Stack/jour'
+                        valueSuffix : 'plis/heure'
                     }
                 },
 
-                //----Séies N°2----//        
-                {
-                    name: 'Plis/heure',
-                    yAxis: 1,
-                    data: dataserie('P'),
-                    shadow: {
-                        width: 5,
-                        opacity: 0.2,
-                        color: '#038197'
-                    },
-                    color: '#038197',            
-                    tooltip:{
-                        valueSuffix : 'plis/heure'
-                    }
-                }]
+                ]
             });
-        ////////////////fin graph 1//////////////
         });
     });
 });

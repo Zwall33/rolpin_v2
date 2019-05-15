@@ -9,7 +9,7 @@ $(document).ready(function(){
             "Nombre de Planche": (row[0].Planche),
             "Nombre de Pile": (row[0].Stack),
             "Début": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
-            "Fin": (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
+            "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
             }
             ]
 
@@ -118,7 +118,7 @@ $(document).ready(function(){
             "Nombre de Planche": (row[0].Planche),
             "Nombre de Pile": (row[0].Stack),
             "Début": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
-            "Fin": (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
+            "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
             }
             ]
 

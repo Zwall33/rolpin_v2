@@ -81,19 +81,20 @@ setInterval(function(){
     }
   });
 },100*60);
+
 /*
 var trigger;
 var Query;
-context.set(bit_init) = msg.payload;
-if(trigger != (BitOk = context.get(bit_init) && trigger != msg.payload){
-  context.set(value1) = msg.payload.value1;
-  context.set(bit_ready) = msg.payload;
+context.set(bit_init) = msg.payload.value[0];
+if(trigger != (BitOk = context.get(bit_init) && trigger != msg.payload.value[0]){
+  context.set(value1) = msg.payload.value[1];
+  context.set(bit_ready) = msg.payload.value[0];
   Query = "okokok";
   return msg.topic = Query;
-}else if((BitOk = context.set(bit_ready) != msg.payload)){
+}else if((BitOk = context.set(bit_ready) != msg.payload.value[0])){
   value1 = context.get(value1);
-  context.set(bit_ready) = msg.payload;
+  context.set(bit_ready) = msg.payload.value[0];
   Query = "okokok";
   return blabla;
-}else context.set(value1) = msg.payload.value1;
+}else context.set(value1) = msg.payload.value.value[1];
 */
