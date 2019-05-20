@@ -21,7 +21,7 @@ class Request {
     }
 
     static getDefautTrLEA(){
-        let sql = "SELECT * FROM Defaut ORDER BY id DESC";
+        let sql = "SELECT * FROM Defauts ORDER BY id DESC";
         return sql;
     }
 

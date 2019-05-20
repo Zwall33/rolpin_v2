@@ -58,8 +58,7 @@ $(document).ready(function(){
                 ]
             });
     
-            var nb_entry = parseInt(row[0].id,10);
-            if (nb_entry > 1000) nb_entry = 1000;
+            var nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
@@ -87,8 +86,7 @@ $(document).ready(function(){
                 ]
             });
         
-            var nb_entry = parseInt(row[0].id,10);
-            if (nb_entry > 1000) nb_entry = 1000;
+            var nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
@@ -113,7 +111,7 @@ $(document).ready(function(){
             var data;
             data = [
             {
-            "Recette": row[0].Current_recipe,
+            "Recette": row[0].Recette,
             "Nombre de Placage": (row[0].Feuille),
             "Nombre de Planche": (row[0].Planche),
             "Nombre de Pile": (row[0].Stack),
@@ -137,13 +135,12 @@ $(document).ready(function(){
                 ]
             });
 
-            var nb_entry = parseInt(row[0].id,10);
-            if (nb_entry > 1000) nb_entry = 1000;
+            var nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
                 {     
-                "Recette": row[i].Current_recipe,
+                "Recette": row[i].Recette,
                 "Nombre de Placage": (row[i].Feuille),
                 "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
                 "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
@@ -166,13 +163,12 @@ $(document).ready(function(){
                 ]
             });
     
-            var nb_entry = parseInt(row[0].id,10);
-            if (nb_entry > 1000) nb_entry = 1000;
+            var nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
                 {     
-                "Recette": row[i].Current_recipe,
+                "Recette": row[i].Recette,
                 "Nombre de Planche": (row[i].Planche),
                 "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
                 "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
@@ -195,13 +191,12 @@ $(document).ready(function(){
                 ]
             });
         
-            var nb_entry = parseInt(row[0].id,10);
-            if (nb_entry > 1000) nb_entry = 1000;
+            var nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
                 {     
-                "Recette": row[i].Current_recipe,
+                "Recette": row[i].Recette,
                 "Nombre de Pile": (row[i].Stack),
                 "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
                 "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')

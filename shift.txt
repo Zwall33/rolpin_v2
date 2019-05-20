@@ -1,0 +1,13 @@
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('21mm (7plis)','814','4965','23');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('18mm (7plis)','145','1019','5');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('9mm (3plis)','1106','4214','16');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('10mm (5plis)','1390','5632','23');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('21mm (7plis)','1750','8157','35');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('Polyfont / Cargo / P. F 18 (7plis)','2311','12106','55');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('12mm (5plis)','2831','14956','68');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('12mm (5plis)','2831','14956','68');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('15mm (5plis)','3472','18166','84');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('18mm (7plis)','3793','20605','95');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('Polyfont / Cargo / P. F 18 (7plis)','1142','8013','41');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('10mm (5plis)','1721','10926','55');
+INSERT INTO shift(Recette, Feuille, Planche, Stack) VALUES ('9mm (3plis)','2121','12126','60');

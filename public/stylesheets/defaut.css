@@ -1,18 +1,6 @@
-.tableur2{
-    left: 19%;
-    top: 15%;
-    position: absolute;
-    box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
-    background-color: whitesmoke;
-    height: auto;
-    width: 74%;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  
   .tableur{
     left: 19%;
-    top: 105%;
+    top: 15%;
     position: absolute;
     box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
     background-color: whitesmoke;
@@ -24,7 +12,7 @@
   }
   
   h1.index1{
-    top: 87%;
+    top: 0.5%;
     left: 200px;
     position: absolute;
     padding:1%;

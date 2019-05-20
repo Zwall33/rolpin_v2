@@ -5,11 +5,11 @@ $(document).ready(function(){
       var data;
       data = [
         {
-          "Défaut": row[0].defaut,
-          "Dernière présence": (""+row[0].lasttime).replace('T', ' ').replace('.000Z',''),
-          "Début": (""+row[0].debut).replace('T', ' ').replace('.000Z',''),
-          "Fin": (""+row[0].fin).replace('T', ' ').replace('.000Z','')
-        }
+          "ID": (row[0].id),
+          "Défaut": row[0].Nom,
+          "Etat": row[0].Etat,
+          "Heure": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
+          }
       ]
       
       var table = $('#defaut_table').DataTable({
@@ -20,10 +20,10 @@ $(document).ready(function(){
         retrieve: true,
         data: data,
         columns: [
+          {data: 'ID'},
           { data: 'Défaut' },
-          { data: 'Dernière présence' },
-          { data: 'Début' },
-          { data: 'Fin' }
+          { data: 'Etat' },
+          { data: 'Heure' },
         ]
       });
       var nb_entry = parseInt(row[0].id,10);
@@ -31,11 +31,11 @@ $(document).ready(function(){
       table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
       for(i = 1; i < nb_entry; i++){
       table.rows.add([
-        {     
-        "Défaut": row[i].defaut,
-        "Dernière présence": (""+row[i].lasttime).replace('T', ' ').replace('.000Z',''),
-        "Début": (""+row[i].debut).replace('T', ' ').replace('.000Z',''),
-        "Fin": (""+row[i].fin).replace('T', ' ').replace('.000Z','')
+        {
+        "ID": (row[i].id),     
+        "Défaut": row[i].Nom,
+        "Etat": row[i].Etat,
+        "Heure": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
         }
       ]).draw();
       }
@@ -43,15 +43,15 @@ $(document).ready(function(){
   });
 });
 
-setInterval(function(){
+/*setInterval(function(){
   $.get('/dbIndex/defautTrLEA',{},function(row){
     var data;
     data = [
       {
-        "Défaut": row[0].defaut,
-        "Dernière présence": (""+row[0].lasttime).replace('T', ' ').replace('.000Z',''),
-        "Début": (""+row[0].debut).replace('T', ' ').replace('.000Z',''),
-        "Fin": (""+row[0].fin).replace('T', ' ').replace('.000Z','')
+        "Défaut": row[0].Nom,
+        "Etat": (""+row[0].Etat).replace('T', ' ').replace('.000Z',''),
+        "Heure": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
+        "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
       }
     ]
     var table = $('#defaut_TR').DataTable({
@@ -63,8 +63,8 @@ setInterval(function(){
       data: data,
       columns: [
         { data: 'Défaut' },
-        { data: 'Dernière présence' },
-        { data: 'Début' },
+        { data: 'Etat' },
+        { data: 'Heure' },
         { data: 'Fin' }
       ]
     });
@@ -72,15 +72,15 @@ setInterval(function(){
     for (i = 0; i < 10; i++){
       table.rows.add([
         {     
-        "Défaut": row[i].defaut,
-        "Dernière présence": (""+row[i].lasttime).replace('T', ' ').replace('.000Z',''),
-        "Début": (""+row[i].debut).replace('T', ' ').replace('.000Z',''),
-        "Fin": (""+row[i].fin).replace('T', ' ').replace('.000Z','')
+        "Défaut": row[i].Nom,
+        "Etat": (""+row[i].Etat).replace('T', ' ').replace('.000Z',''),
+        "Heure": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
+        "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
         }
       ]).draw();
     }
   });
-},100*60);
+},1*60);*/
 
 /*
 var trigger;
