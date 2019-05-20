@@ -90,7 +90,7 @@
 
 .tableur_plis_equipe{
   left: 19%;
-  top: 105%;
+  top: 102%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -103,7 +103,7 @@
 /************************************************************************************************************************************************************/
 
 .placage_recette{
-  top: 162%;
+  top: 168%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -124,7 +124,7 @@
 
 .tableur_plis_recette{
   left: 19%;
-  top: 177%;
+  top: 181%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -137,7 +137,7 @@
 /************************************************************************************************************************************************************/
 
 .planche_equipe{
-  top: 234%;
+  top: 246%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -158,7 +158,7 @@
 
 .tableur_planche_equipe{
   left: 19%;
-  top: 249%;
+  top: 258%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -171,7 +171,7 @@
 /************************************************************************************************************************************************************/
 
 .planche_recette{
-  top: 306%;
+  top: 318%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -192,7 +192,7 @@
 
 .tableur_planche_recette{
   left: 19%;
-  top: 321%;
+  top: 330%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -205,7 +205,7 @@
 /************************************************************************************************************************************************************/
 
 .pile_equipe{
-  top: 378%;
+  top: 396%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -226,7 +226,7 @@
 
 .tableur_pile_equipe{
   left: 19%;
-  top: 393%;
+  top: 407%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -239,7 +239,7 @@
 /************************************************************************************************************************************************************/
 
 .pile_recette{
-  top: 450%;
+  top: 470%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -260,7 +260,7 @@
 
 .tableur_pile_recette{
   left: 19%;
-  top: 465%;
+  top: 482%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
