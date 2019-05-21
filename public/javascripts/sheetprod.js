@@ -8,8 +8,8 @@ $(document).ready(function(){
             "Placages": (row[0].Feuille),
             "Panneaux": (row[0].Planche),
             "Piles": (row[0].Stack),
-            "Début": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
-            "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
+            "Début": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z',''),
+            "Fin": (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
             }
             ]
 
@@ -40,8 +40,8 @@ $(document).ready(function(){
                 "Placages": (row[0].Feuille),
                 "Panneaux": (row[0].Planche),
                 "Piles": (row[0].Stack),
-                "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
+                "Début": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z',''),
+                "Fin": (""+row[i].Heure).replace('T', ' ').replace('.000Z','')
                 }
             ]).draw();
             }
@@ -62,8 +62,8 @@ $(document).ready(function(){
             "Placages": (row[0].Feuille),
             "Panneaux": (row[0].Planche),
             "Piles": (row[0].Stack),
-            "Début": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
-            "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
+            "Début": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z',''),
+            "Fin": (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
             }
             ]
 
@@ -93,8 +93,8 @@ $(document).ready(function(){
                 "Placages": (row[i].Feuille),
                 "Panneaux": (row[i].Planche),
                 "Piles": (row[i].Stack),
-                "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
+                "Début": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z',''),
+                "Fin": (""+row[i].Heure).replace('T', ' ').replace('.000Z','')
                 }
             ]).draw();
             }
