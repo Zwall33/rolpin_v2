@@ -5,15 +5,15 @@ $(document).ready(function(){
             data = [
             {
             "Equipe": row[0].Equipe,
-            "Nombre de Placage": (row[0].Feuille),
-            "Nombre de Planche": (row[0].Planche),
-            "Nombre de Pile": (row[0].Stack),
+            "Placages": (row[0].Feuille),
+            "Panneaux": (row[0].Planche),
+            "Piles": (row[0].Stack),
             "Début": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
             "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
             }
             ]
 
-            var table = $('#plis_equipe').DataTable({
+            var table = $('#production_equipe').DataTable({
                 buttons: [
                 'copy', 'excel', 'pdf'
                 ],
@@ -22,7 +22,9 @@ $(document).ready(function(){
                 data: data,
                 columns: [
                 { data: 'Equipe' },
-                { data: 'Nombre de Placage' },
+                { data: 'Placages' },
+                { data: 'Panneaux' },
+                { data: 'Piles' },
                 { data: 'Début' },
                 { data: 'Fin' }
                 ]
@@ -35,64 +37,9 @@ $(document).ready(function(){
             table.rows.add([
                 {     
                 "Equipe": row[i].Equipe,
-                "Nombre de Placage": (row[i].Feuille),
-                "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
-                }
-            ]).draw();
-            }
-
-
-            var table = $('#planche_equipe').DataTable({
-                buttons: [
-                  'copy', 'excel', 'pdf'
-                ],
-                paging: true,
-                retrieve: true,
-                data: data,
-                columns: [
-                  { data: 'Equipe' },
-                  { data: 'Nombre de Planche' },
-                  { data: 'Début' },
-                  { data: 'Fin' }
-                ]
-            });
-    
-            var nb_entry = 1000;
-            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
-            for(i = 1; i < nb_entry; i++){
-            table.rows.add([
-                {     
-                "Equipe": row[i].Equipe,
-                "Nombre de Planche": (row[i].Planche),
-                "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
-                }
-            ]).draw();
-            }
-    
-            var table = $('#pile_equipe').DataTable({
-                buttons: [
-                    'copy', 'excel', 'pdf'
-                ],
-                paging: true,
-                retrieve: true,
-                data: data,
-                columns: [
-                    { data: 'Equipe' },
-                    { data: 'Nombre de Pile' },
-                    { data: 'Début' },
-                    { data: 'Fin' }
-                ]
-            });
-        
-            var nb_entry = 1000;
-            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
-            for(i = 1; i < nb_entry; i++){
-            table.rows.add([
-                {     
-                "Equipe": row[i].Equipe,
-                "Nombre de Pile": (row[i].Stack),
+                "Placages": (row[0].Feuille),
+                "Panneaux": (row[0].Planche),
+                "Piles": (row[0].Stack),
                 "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
                 "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
                 }
@@ -112,15 +59,15 @@ $(document).ready(function(){
             data = [
             {
             "Recette": row[0].Recette,
-            "Nombre de Placage": (row[0].Feuille),
-            "Nombre de Planche": (row[0].Planche),
-            "Nombre de Pile": (row[0].Stack),
+            "Placages": (row[0].Feuille),
+            "Panneaux": (row[0].Planche),
+            "Piles": (row[0].Stack),
             "Début": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
             "Fin": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z','')
             }
             ]
 
-            var table = $('#plis_recette').DataTable({
+            var table = $('#production_recette').DataTable({
                 buttons: [
                 'copy', 'excel', 'pdf'
                 ],
@@ -129,7 +76,9 @@ $(document).ready(function(){
                 data: data,
                 columns: [
                 { data: 'Recette' },
-                { data: 'Nombre de Placage' },
+                { data: 'Placages' },
+                { data: 'Panneaux' },
+                { data: 'Piles' },
                 { data: 'Début' },
                 { data: 'Fin' }
                 ]
@@ -141,68 +90,15 @@ $(document).ready(function(){
             table.rows.add([
                 {     
                 "Recette": row[i].Recette,
-                "Nombre de Placage": (row[i].Feuille),
+                "Placages": (row[i].Feuille),
+                "Panneaux": (row[i].Planche),
+                "Piles": (row[i].Stack),
                 "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
                 "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
                 }
             ]).draw();
             }
             
-            var table = $('#planche_recette').DataTable({
-                buttons: [
-                  'copy', 'excel', 'pdf'
-                ],
-                paging: true,
-                retrieve: true,
-                data: data,
-                columns: [
-                  { data: 'Recette' },
-                  { data: 'Nombre de Planche' },
-                  { data: 'Début' },
-                  { data: 'Fin' }
-                ]
-            });
-    
-            var nb_entry = 1000;
-            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
-            for(i = 1; i < nb_entry; i++){
-            table.rows.add([
-                {     
-                "Recette": row[i].Recette,
-                "Nombre de Planche": (row[i].Planche),
-                "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
-                }
-            ]).draw();
-            }
-    
-            var table = $('#pile_recette').DataTable({
-                buttons: [
-                    'copy', 'excel', 'pdf'
-                ],
-                paging: true,
-                retrieve: true,
-                data: data,
-                columns: [
-                    { data: 'Recette' },
-                    { data: 'Nombre de Pile' },
-                    { data: 'Début' },
-                    { data: 'Fin' }
-                ]
-            });
-        
-            var nb_entry = 1000;
-            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
-            for(i = 1; i < nb_entry; i++){
-            table.rows.add([
-                {     
-                "Recette": row[i].Recette,
-                "Nombre de Pile": (row[i].Stack),
-                "Début": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z','')
-                }
-            ]).draw();
-            }
         });
     
     });

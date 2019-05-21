@@ -68,7 +68,7 @@
 
 /************************************************************************************************************************************************************/
 
-.placage_equipe{
+.production_equipe{
   top: 90%;
     left: 200px;
     position: absolute;
@@ -88,7 +88,7 @@
     box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
 }
 
-.tableur_plis_equipe{
+.tableur_production_equipe{
   left: 19%;
   top: 102%;
   position: absolute;
@@ -102,7 +102,7 @@
 
 /************************************************************************************************************************************************************/
 
-.placage_recette{
+.production_recette{
   top: 168%;
   left: 200px;
   position: absolute;
@@ -122,7 +122,7 @@
   box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
 }
 
-.tableur_plis_recette{
+.tableur_production_recette{
   left: 19%;
   top: 181%;
   position: absolute;
