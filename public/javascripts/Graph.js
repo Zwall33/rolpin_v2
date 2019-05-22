@@ -1,13 +1,13 @@
 //Tableau de 10 valeurs (Stack/jour et Plis/heure)
-var Nb_plis_heure = new Array(10);
-var Nb_stack_jour = new Array(10);
+var plis = new Array(10);
 
-var inter = 5000
+
+var inter = ((100*60)*60);
 var y_plis=0;
-var z_stack=0;
 
 
-//document.getElementById("stack/jour").innerHTML = Nb_stack_jour[9] + ' Stack/jour ';
+
+//document.getElementById("stack/jour").innerHTML = Nb_plis[9] + ' Stack/jour ';
 
 
 function ShiftTab(t){
@@ -33,33 +33,24 @@ function dataserie(car){
     var data = [],
     time = GetTime(),
     i;
-
     if(car == 'S') {
-        ShiftTab(Nb_stack_jour);
+        ShiftTab(plis);
         for (i = -9; i <= 0; i += 1) {
-            data.push([time + i * inter,Nb_stack_jour[i+9]]);
+            data.push([time + i * inter,plis[i+9]]);
         }
-        //document.getElementById("stack/jour").innerHTML = Nb_stack_jour[9] + ' Stack/jour ';
-    }
-    if(car == 'P') {
-        ShiftTab(Nb_plis_heure);
-        for (i = -9; i <= 0; i += 1) {
-            data.push([time + i * inter,Nb_plis_heure[i+9]]);
-        }
-        //document.getElementById("plis/heure").innerHTML = Nb_plis_heure[9] + ' plis/heure';
+        //document.getElementById("stack/jour").innerHTML = Nb_plis[9] + ' Stack/jour ';
     }
     return data;
 }
 
 $(function(){ 
-    $.get('/dbIndex/Nb_plis_init', {},function(row){// init tab
+    $.get('/dbIndex/AverageHour', {},function(row){// init tab
         for (i=9; i>=0 ;i--){
-            Nb_stack_jour[i] = row[i].Nb_stack_jour;
-            Nb_plis_heure[i] = row[i].Nb_plis_heure;
+            Nb_plis[i] = row[i].plis;
         }
         
 
-        $(function () {/////////////////////////////////// graphique Nb_stack_jour et Nb_plis_heure
+        $(function () {/////////////////////////////////// graphique Nb_plis et Nb_plis_heure
             /////////// graph 1 /////////////////////
             var myChart = Highcharts.chart('container', {
                 chart: {
@@ -72,19 +63,19 @@ $(function(){
                         var series = this.series[0];
                         setInterval(function (){
                             
-                            ShiftTab(Nb_plis_heure);
+                            ShiftTab(plis);
                             $(function(){ 
-                                $.get('/dbIndex/Nb_plis_heure', {},function(row){
-                                    y_plis = row[0].Nb_plis_heure;
+                                $.get('/dbIndex/AverageHour', {},function(row){
+                                    y_plis = row[0].plis;
                                     var x =GetTime();
                                     Nb_plis_heure[9] = y_plis;
 
                                     series.addPoint([x, y_plis], true, true);
                                 
-                                $.get('/dbIndex/AverageHour', {},function(row){
+                                $.get('/dbIndex/AverageMin', {},function(row){
                                     document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
                                 });
-                                $.get('/dbIndex/AverageMin', {},function(row){
+                                $.get('/dbIndex/AverageHour', {},function(row){
                                     document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
                                 });
                             });
