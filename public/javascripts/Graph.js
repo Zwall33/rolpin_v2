@@ -38,7 +38,6 @@ function dataserie(car){
         for (i = -9; i <= 0; i += 1) {
             data.push([time + i * inter,plis[i+9]]);
         }
-        //document.getElementById("stack/jour").innerHTML = Nb_plis[9] + ' Stack/jour ';
     }
     return data;
 }
@@ -50,8 +49,7 @@ $(function(){
         }
         
 
-        $(function () {/////////////////////////////////// graphique Nb_plis et Nb_plis_heure
-            /////////// graph 1 /////////////////////
+        $(function () {/////////////////////////////////// graphique Nb_plis_heure
             var myChart = Highcharts.chart('container', {
                 chart: {
                     backgroundColor: '#635e5e',
