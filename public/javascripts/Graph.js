@@ -42,6 +42,8 @@ function dataserie(car){
     return data;
 }
 
+var Nb_plis;
+
 $(function(){ 
     $.get('/dbIndex/AverageHour', {},function(row){// init tab
         for (i=9; i>=0 ;i--){
@@ -69,13 +71,14 @@ $(function(){
                                     Nb_plis_heure[9] = y_plis;
 
                                     series.addPoint([x, y_plis], true, true);
-                                
+                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
+                                    
                                 $.get('/dbIndex/AverageMin', {},function(row){
                                     document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
                                 });
-                                $.get('/dbIndex/AverageHour', {},function(row){
+                                /*$.get('/dbIndex/AverageHour', {},function(row){
                                     document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
-                                });
+                                });*/
                             });
                             });
                         }, inter);

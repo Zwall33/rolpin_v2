@@ -103,8 +103,8 @@ $(document).ready(function(){
                 "Placages": (row[i].Feuille),
                 "Panneaux": (row[i].Planche),
                 "Piles": (row[i].Stack),
-                "Volume": (row[0].Volume),
-                "Rebuts": (row[0].Rebuts),
+                "Volume": (row[i].Volume),
+                "Rebuts": (row[i].Rebuts),
                 "Début": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z',''),
                 "Fin": (""+row[i].Heure).replace('T', ' ').replace('.000Z','')
                 }
