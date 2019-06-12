@@ -3,10 +3,6 @@ class Request {
         let sql = "SELECT * FROM Defauts ORDER BY id DESC";
         return sql;
     }
-    static getStockLEA(){
-        let sql = "SELECT Nb_plis_heure,Nb_stack_jour FROM Production";
-        return sql;
-    }
     static getInitAverageMin(){
         let sql = 'SELECT * FROM Moyenne_min ORDER BY Heure DESC LIMIT 10';
         return sql;

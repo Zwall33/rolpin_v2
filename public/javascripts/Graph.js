@@ -45,7 +45,7 @@ function dataserie(car){
 var Nb_plis;
 
 $(function(){ 
-    $.get('/dbIndex/AverageHour', {},function(row){// init tab
+    $.get('/dbIndex/InitAverageHour', {},function(row){// init tab
         for (i=9; i>=0 ;i--){
             Nb_plis[i] = row[i].plis;
         }
