@@ -2,12 +2,12 @@
 var plis = new Array(10);
 
 
-var inter = ((100*60)*60);
+var inter = (5000);
 var y_plis=0;
 
 
 
-//document.getElementById("stack/jour").innerHTML = Nb_plis[9] + ' Stack/jour ';
+//document.getElementById("stack/jour").innerHTML = plis[9] + ' Stack/jour ';
 
 
 function ShiftTab(t){
@@ -42,16 +42,16 @@ function dataserie(car){
     return data;
 }
 
-var Nb_plis;
+var plis;
 
 $(function(){ 
     $.get('/dbIndex/InitAverageHour', {},function(row){// init tab
-        for (i=9; i>=0 ;i--){
-            Nb_plis[i] = row[i].plis;
+        for (i = -9; i <= 0; i += 1){
+            plis[i] = row[i].plis;
         }
         
 
-        $(function () {/////////////////////////////////// graphique Nb_plis_heure
+        $(function () {/////////////////////////////////// graphique plis_heure
             var myChart = Highcharts.chart('container', {
                 chart: {
                     backgroundColor: '#635e5e',
@@ -67,19 +67,20 @@ $(function(){
                             $(function(){ 
                                 $.get('/dbIndex/AverageHour', {},function(row){
                                     y_plis = row[0].plis;
-                                    var x =GetTime();
-                                    Nb_plis_heure[9] = y_plis;
+                                    var x = (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
+                                    plis[9] = y_plis;
 
                                     series.addPoint([x, y_plis], true, true);
                                     document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
                                     
-                                $.get('/dbIndex/AverageMin', {},function(row){
-                                    document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
-                                });
+                                
                                 /*$.get('/dbIndex/AverageHour', {},function(row){
                                     document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
                                 });*/
+                                });
                             });
+                            $.get('/dbIndex/AverageMin', {},function(row){
+                                document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
                             });
                         }, inter);
                     }
