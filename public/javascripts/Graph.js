@@ -2,7 +2,7 @@
 var plis = new Array(10);
 
 
-var inter = (5000);
+var inter = (1000*60*60);
 var y_plis=0;
 
 
@@ -46,10 +46,13 @@ var plis;
 
 $(function(){ 
     $.get('/dbIndex/InitAverageHour', {},function(row){// init tab
-        for (i = -9; i <= 0; i += 1){
+        for (i = 9; i >= 0; i--){
             plis[i] = row[i].plis;
         }
-        
+        document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
+        $.get('/dbIndex/AverageMin', {},function(row){
+            document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
+        });
 
         $(function () {/////////////////////////////////// graphique plis_heure
             var myChart = Highcharts.chart('container', {
@@ -67,9 +70,8 @@ $(function(){
                             $(function(){ 
                                 $.get('/dbIndex/AverageHour', {},function(row){
                                     y_plis = row[0].plis;
-                                    var x = (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
+                                    var x =GetTime();
                                     plis[9] = y_plis;
-
                                     series.addPoint([x, y_plis], true, true);
                                     document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
                                     
