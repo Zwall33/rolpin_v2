@@ -19,7 +19,7 @@ function ShiftTab(t){
 function GetTime(){
     
     var d = new Date();
-    var t = d.getTime()/inter;
+    var t = (d.getTime()/inter)+ (d.getTimezoneOffset(60));
     var tamp = parseInt(t);
     tamp = t - tamp;
     tamp = tamp.toPrecision(3);
@@ -31,8 +31,7 @@ function GetTime(){
 
 function dataserie(car){
     var data = [],
-    time = GetTime(),
-    i;
+    time = GetTime();
     if(car == 'S') {
         ShiftTab(plis);
         for (i = -9; i <= 0; i += 1) {
