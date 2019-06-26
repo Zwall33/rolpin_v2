@@ -11,7 +11,7 @@ var y_plis=0;
 
 
 function ShiftTab(t){
-    for (i = 0; i < 9; i++) {
+    for (i = 0; i < 8; i++) {
         t[i]=t[i+1];  
     }
 }
