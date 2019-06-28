@@ -1,14 +1,9 @@
-//Tableau de 10 valeurs (Stack/jour et Plis/heure)
+//Tableau de 10 valeurs (Plis/heure)
 var plis = new Array(10);
 
 
 var inter = (1000*60*60);
 var y_plis=0;
-
-
-
-//document.getElementById("stack/jour").innerHTML = plis[9] + ' Stack/jour ';
-
 
 function ShiftTab(t){
     for (i = 0; i < 8; i++) {
