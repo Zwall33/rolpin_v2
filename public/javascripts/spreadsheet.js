@@ -7,8 +7,8 @@ $(document).ready(function(){
         {
           "ID": (row[0].id),
           "Défaut": row[0].Nom,
-          "Etat": row[0].Etat,
-          "Heure": (""+row[0].Heure).replace('T', ' ').replace('.000Z',''),
+          "Heure": (row[0].Heure).replace('T', ' ').replace('.000Z',''),
+          "Durée":(row[0].Duree),
           }
       ]
       
@@ -22,8 +22,8 @@ $(document).ready(function(){
         columns: [
           {data: 'ID'},
           { data: 'Défaut' },
-          { data: 'Etat' },
           { data: 'Heure' },
+          { data : 'Durée'}
         ]
       });
       var nb_entry = parseInt(row[0].id,10);
@@ -34,8 +34,8 @@ $(document).ready(function(){
         {
         "ID": (row[i].id),     
         "Défaut": row[i].Nom,
-        "Etat": row[i].Etat,
-        "Heure": (""+row[i].Heure).replace('T', ' ').replace('.000Z',''),
+        "Heure": (row[i].Heure).replace('T', ' ').slice(0,-5),
+        "Durée":(row[i].Duree),
         }
       ]).draw();
       }
