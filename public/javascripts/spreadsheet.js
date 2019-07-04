@@ -7,7 +7,7 @@ $(document).ready(function(){
         {
           "ID": (row[0].id),
           "Défaut": row[0].Nom,
-          "Heure": (row[0].Heure).replace('T', ' ').replace('.000Z',''),
+          "Heure": (row[0].Heure).replace('T', ' ').slice(0,-5),
           "Durée":(row[0].Duree),
           }
       ]
