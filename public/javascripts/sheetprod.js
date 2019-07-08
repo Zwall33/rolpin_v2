@@ -10,15 +10,28 @@ $(document).ready(function(){
             "Piles": (row[0].Stack),
             "Volume": (row[0].Volume),
             "Rebuts": (row[0].Rebuts),
-            "Début": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z',''),
-            "Fin": (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
+            "Début": (""+row[0+1].Heure).replace('T', ' ').slice(0,-5),
+            "Fin": (""+row[0].Heure).replace('T', ' ').slice(0,-5),
             }
             ]
 
             var table = $('#production_equipe').DataTable({
                 buttons: [
-                'copy', 'excel', 'pdf'
+                'copy',
+                {
+                    extend: 'csv',
+                    title: 'Production équipe'
+                  },
+                {
+                    extend: 'excel',
+                    title: 'Production équipe'
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Production équipe'
+                }
                 ],
+                responsive: true,
                 paging: true,
                 retrieve: true,
                 data: data,
@@ -46,8 +59,8 @@ $(document).ready(function(){
                 "Piles": (row[0].Stack),
                 "Volume": (row[0].Volume),
                 "Rebuts": (row[0].Rebuts),
-                "Début": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i].Heure).replace('T', ' ').replace('.000Z','')
+                "Début": (""+row[i+1].Heure).replace('T', ' ').slice(0,-5),
+                "Fin": (""+row[i].Heure).replace('T', ' ').slice(0,-5),
                 }
             ]).draw();
             }
@@ -70,14 +83,26 @@ $(document).ready(function(){
             "Piles": (row[0].Stack),
             "Volume": (row[0].Volume),
             "Rebuts": (row[0].Rebuts),
-            "Début": (""+row[0+1].Heure).replace('T', ' ').replace('.000Z',''),
-            "Fin": (""+row[0].Heure).replace('T', ' ').replace('.000Z','')
+            "Début": (""+row[0+1].Heure).replace('T', ' ').slice(0,-5),
+            "Fin": (""+row[0].Heure).replace('T', ' ').slice(0,-5),
             }
             ]
 
             var table = $('#production_recette').DataTable({
                 buttons: [
-                'copy', 'excel', 'pdf'
+                'copy',
+                {
+                    extend: 'csv',
+                    title: 'Production recette'
+                  },
+                {
+                    extend: 'excel',
+                    title: 'Production recette'
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Production recette'
+                }
                 ],
                 paging: true,
                 retrieve: true,
@@ -105,8 +130,8 @@ $(document).ready(function(){
                 "Piles": (row[i].Stack),
                 "Volume": (row[i].Volume),
                 "Rebuts": (row[i].Rebuts),
-                "Début": (""+row[i+1].Heure).replace('T', ' ').replace('.000Z',''),
-                "Fin": (""+row[i].Heure).replace('T', ' ').replace('.000Z','')
+                "Début": (""+row[i+1].Heure).replace('T', ' ').slice(0,-5),
+                "Fin": (""+row[i].Heure).replace('T', ' ').slice(0,-5)
                 }
             ]).draw();
             }

@@ -14,13 +14,26 @@ $(document).ready(function(){
       
       var table = $('#defaut_table').DataTable({
         buttons: [
-          'copy', 'excel', 'pdf'
+          'copy',
+          {
+            extend: 'csv',
+            title: 'defaut'
+          },
+          {
+            extend: 'excel',
+            title: 'defaut'
+          },
+          {
+            extend: 'pdf',
+            title: 'defaut'
+          }
         ],
+        responsive: true,
         paging: true,
         retrieve: true,
         data: data,
         columns: [
-          {data: 'ID'},
+          { data: 'ID'},
           { data: 'Défaut' },
           { data: 'Heure' },
           { data : 'Durée'}
