@@ -5,8 +5,8 @@ $(document).ready(function(){
             data = [
             {
             "Equipe": row[0].Equipe,
-            "Placages": (row[0].Feuille),
-            "Panneaux": (row[0].Planche),
+            "Placages": (row[0].Placage),
+            "Panneaux": (row[0].Panneau),
             "Piles": (row[0].Stack),
             "Volume": (row[0].Volume),
             "Rebuts": (row[0].Rebuts),
@@ -54,11 +54,11 @@ $(document).ready(function(){
             table.rows.add([
                 {     
                 "Equipe": row[i].Equipe,
-                "Placages": (row[0].Feuille),
-                "Panneaux": (row[0].Planche),
-                "Piles": (row[0].Stack),
-                "Volume": (row[0].Volume),
-                "Rebuts": (row[0].Rebuts),
+                "Placages": (row[i].Placage),
+                "Panneaux": (row[i].Panneau),
+                "Piles": (row[i].Stack),
+                "Volume": (row[i].Volume),
+                "Rebuts": (row[i].Rebuts),
                 "Début": (""+row[i+1].Heure).replace('T', ' ').slice(0,-5),
                 "Fin": (""+row[i].Heure).replace('T', ' ').slice(0,-5),
                 }
@@ -79,7 +79,7 @@ $(document).ready(function(){
             {
             "Recette": row[0].Recette,
             "Placages": (row[0].Feuille),
-            "Panneaux": (row[0].Planche),
+            "Panneaux": (row[0].Panneau),
             "Piles": (row[0].Stack),
             "Volume": (row[0].Volume),
             "Rebuts": (row[0].Rebuts),
@@ -104,6 +104,7 @@ $(document).ready(function(){
                     title: 'Production recette'
                 }
                 ],
+                responsive: true,
                 paging: true,
                 retrieve: true,
                 data: data,
@@ -126,7 +127,7 @@ $(document).ready(function(){
                 {     
                 "Recette": row[i].Recette,
                 "Placages": (row[i].Feuille),
-                "Panneaux": (row[i].Planche),
+                "Panneaux": (row[i].Panneau),
                 "Piles": (row[i].Stack),
                 "Volume": (row[i].Volume),
                 "Rebuts": (row[i].Rebuts),
