@@ -27,5 +27,11 @@ class Request {
         let sql = 'SELECT * FROM total ORDER BY Heure DESC';
         return sql;
     }
+    static getTempsArretProd(){
+        let sql = 'SELECT * FROM DureePArret ORDER BY Heure DESC'
+    }
+    static getTempsArretRecette(){
+        let sql = 'SELECT * FROM DureeRArret ORDER BY Heure DESC'
+    }
 }
 export default Request;

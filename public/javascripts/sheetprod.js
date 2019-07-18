@@ -138,6 +138,194 @@ $(document).ready(function(){
             }
             
         });
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+
+        $.get('/dbIndex/TempsArretProd',{},function(row){
+            var data;
+            data = [
+            {
+            "Poste":row[0].Poste,
+            "Nom":row[0].Nom,
+            "Fréquence":row[0].FreqP,
+            "DureeP":row[0].DureeP,
+            "Heure":row[0].Heure
+            }
+            ]
+
+            var table = $('#temps_prod').DataTable({
+                buttons: [
+                'copy',
+                {
+                    extend: 'csv',
+                    title: 'Temps arret/poste'
+                  },
+                {
+                    extend: 'excel',
+                    title: 'Temps arret/poste'
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Temps arret/poste'
+                }
+                ],
+                responsive: true,
+                paging: true,
+                retrieve: true,
+                data: data,
+                columns: [
+                { data: 'Poste' },
+                { data: 'Nom' },
+                { data: 'Fréquence' },
+                { data: 'Durée' },
+                { data: 'Heure' }
+                ]
+            });
+
+            var nb_entry = 1000;
+            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
+            for(i = 1; i < nb_entry; i++){
+            table.rows.add([
+                {     
+                    "Poste":row[i].Poste,
+                    "Nom":row[i].Nom,
+                    "Fréquence":row[i].FreqP,
+                    "DureeP":row[i].DureeP,
+                    "Heure":row[i].Heure
+                }
+            ]).draw();
+            }
+            
+        });
     
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+
+        $.get('/dbIndex/TempsArretProd',{},function(row){
+            var data;
+            data = [
+            {
+            "Poste":row[0].Poste,
+            "Nom":row[0].Nom,
+            "Fréquence":row[0].FreqP,
+            "DureeP":row[0].DureeP,
+            "Heure":row[0].Heure
+            }
+            ]
+
+            var table = $('#temps_prod').DataTable({
+                buttons: [
+                'copy',
+                {
+                    extend: 'csv',
+                    title: 'Temps arret/poste'
+                  },
+                {
+                    extend: 'excel',
+                    title: 'Temps arret/poste'
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Temps arret/poste'
+                }
+                ],
+                responsive: true,
+                paging: true,
+                retrieve: true,
+                data: data,
+                columns: [
+                { data: 'Poste' },
+                { data: 'Nom' },
+                { data: 'Fréquence' },
+                { data: 'Durée' },
+                { data: 'Heure' }
+                ]
+            });
+
+            var nb_entry = 1000;
+            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
+            for(i = 1; i < nb_entry; i++){
+            table.rows.add([
+                {     
+                    "Poste":row[i].Poste,
+                    "Nom":row[i].Nom,
+                    "Fréquence":row[i].FreqP,
+                    "DureeP":row[i].DureeP,
+                    "Heure":row[i].Heure
+                }
+            ]).draw();
+            }
+            
+        });
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+
+        $.get('/dbIndex/TempsArretRecette',{},function(row){
+            var data;
+            data = [
+            {
+            "Recette":row[0].Recette,
+            "Nom":row[0].Nom,
+            "Fréquence":row[0].FreqR,
+            "DureeP":row[0].DureeR,
+            "Heure":row[0].Heure
+            }
+            ]
+
+            var table = $('#temps_recette').DataTable({
+                buttons: [
+                'copy',
+                {
+                    extend: 'csv',
+                    title: 'Temps arret/recette'
+                },
+                {
+                    extend: 'excel',
+                    title: 'Temps arret/recette'
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Temps arret/recette'
+                }
+                ],
+                responsive: true,
+                paging: true,
+                retrieve: true,
+                data: data,
+                columns: [
+                { data: 'Recette' },
+                { data: 'Nom' },
+                { data: 'Fréquence' },
+                { data: 'Durée' },
+                { data: 'Heure' }
+                ]
+            });
+
+            var nb_entry = 1000;
+            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
+            for(i = 1; i < nb_entry; i++){
+            table.rows.add([
+                {     
+                    "Recette":row[i].Recette,
+                    "Nom":row[i].Nom,
+                    "Fréquence":row[i].FreqR,
+                    "DureeP":row[i].DureeR,
+                    "Heure":row[i].Heure
+                }
+            ]).draw();
+            }
+            
+        });
     });
 });

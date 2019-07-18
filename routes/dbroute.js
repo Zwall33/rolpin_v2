@@ -68,6 +68,23 @@ router.get("/AverageMin",(req, res, next) => {
     });
 });
 
+router.get("/TempsArretProd",(req, res, next) => {
+
+    db.query(Request.getTempsArretProd(), (err, row) =>{
+        if(!err){
+            res.send(row);
+        }
+    });
+});
+
+router.get("/TempsArretRecette",(req, res, next) => {
+
+    db.query(Request.getTempsArretRecette(), (err, row) =>{
+        if(!err){
+            res.send(row);
+        }
+    });
+});
 
 
 module.exports = router;
