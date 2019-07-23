@@ -72,6 +72,70 @@ $(document).ready(function(){
 /********************************************************************************************/
 /********************************************************************************************/
 
+$.get('/dbIndex/TempsArretProd',{},function(row){
+    var data;
+    data = [
+    {
+    "Poste":row[0].Poste,
+    "Nom":row[0].Nom,
+    "Fréquence":row[0].FreqP,
+    "Durée":(""+row[0].DureeP),
+    "Heure":(""+row[0].Heure).replace('T', ' ').slice(0,-5),
+    }
+    ]
+
+    var table = $('#temps_prod').DataTable({
+        buttons: [
+        'copy',
+        {
+            extend: 'csv',
+            title: 'Temps arret/poste'
+          },
+        {
+            extend: 'excel',
+            title: 'Temps arret/poste'
+        },
+        {
+            extend: 'pdf',
+            title: 'Temps arret/poste'
+        }
+        ],
+        responsive: true,
+        paging: true,
+        retrieve: true,
+        data: data,
+        columns: [
+        { data: 'Poste' },
+        { data: 'Nom' },
+        { data: 'Fréquence' },
+        { data: 'Durée' },
+        { data: 'Heure' }
+        ]
+    });
+
+    var nb_entry = parseInt(row[0].id,10);
+    if (nb_entry > 1000) nb_entry = 1000;
+    table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
+    for(i = 1; i < nb_entry; i++){
+    table.rows.add([
+        {     
+            "Poste":row[i].Poste,
+            "Nom":row[i].Nom,
+            "Fréquence":row[i].FreqP,
+            "Durée":(""+row[i].DureeP),
+            "Heure":(""+row[i].Heure).replace('T', ' ').slice(0,-5),
+        }
+    ]).draw();
+    }
+    
+});
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+
 
         $.get('/dbIndex/ShiftProd',{},function(row){
             var data;
@@ -120,7 +184,8 @@ $(document).ready(function(){
                 ]
             });
 
-            var nb_entry = 1000;
+            var nb_entry = parseInt(row[0].id,10);
+            if (nb_entry > 1000) nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
@@ -139,132 +204,8 @@ $(document).ready(function(){
             
         });
 
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
 
-        $.get('/dbIndex/TempsArretProd',{},function(row){
-            var data;
-            data = [
-            {
-            "Poste":row[0].Poste,
-            "Nom":row[0].Nom,
-            "Fréquence":row[0].FreqP,
-            "DureeP":row[0].DureeP,
-            "Heure":row[0].Heure
-            }
-            ]
-
-            var table = $('#temps_prod').DataTable({
-                buttons: [
-                'copy',
-                {
-                    extend: 'csv',
-                    title: 'Temps arret/poste'
-                  },
-                {
-                    extend: 'excel',
-                    title: 'Temps arret/poste'
-                },
-                {
-                    extend: 'pdf',
-                    title: 'Temps arret/poste'
-                }
-                ],
-                responsive: true,
-                paging: true,
-                retrieve: true,
-                data: data,
-                columns: [
-                { data: 'Poste' },
-                { data: 'Nom' },
-                { data: 'Fréquence' },
-                { data: 'Durée' },
-                { data: 'Heure' }
-                ]
-            });
-
-            var nb_entry = 1000;
-            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
-            for(i = 1; i < nb_entry; i++){
-            table.rows.add([
-                {     
-                    "Poste":row[i].Poste,
-                    "Nom":row[i].Nom,
-                    "Fréquence":row[i].FreqP,
-                    "DureeP":row[i].DureeP,
-                    "Heure":row[i].Heure
-                }
-            ]).draw();
-            }
-            
-        });
     
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-
-        $.get('/dbIndex/TempsArretProd',{},function(row){
-            var data;
-            data = [
-            {
-            "Poste":row[0].Poste,
-            "Nom":row[0].Nom,
-            "Fréquence":row[0].FreqP,
-            "DureeP":row[0].DureeP,
-            "Heure":row[0].Heure
-            }
-            ]
-
-            var table = $('#temps_prod').DataTable({
-                buttons: [
-                'copy',
-                {
-                    extend: 'csv',
-                    title: 'Temps arret/poste'
-                  },
-                {
-                    extend: 'excel',
-                    title: 'Temps arret/poste'
-                },
-                {
-                    extend: 'pdf',
-                    title: 'Temps arret/poste'
-                }
-                ],
-                responsive: true,
-                paging: true,
-                retrieve: true,
-                data: data,
-                columns: [
-                { data: 'Poste' },
-                { data: 'Nom' },
-                { data: 'Fréquence' },
-                { data: 'Durée' },
-                { data: 'Heure' }
-                ]
-            });
-
-            var nb_entry = 1000;
-            table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
-            for(i = 1; i < nb_entry; i++){
-            table.rows.add([
-                {     
-                    "Poste":row[i].Poste,
-                    "Nom":row[i].Nom,
-                    "Fréquence":row[i].FreqP,
-                    "DureeP":row[i].DureeP,
-                    "Heure":row[i].Heure
-                }
-            ]).draw();
-            }
-            
-        });
-
 /********************************************************************************************/
 /********************************************************************************************/
 /********************************************************************************************/
@@ -278,8 +219,8 @@ $(document).ready(function(){
             "Recette":row[0].Recette,
             "Nom":row[0].Nom,
             "Fréquence":row[0].FreqR,
-            "DureeP":row[0].DureeR,
-            "Heure":row[0].Heure
+            "Durée":(""+row[0].DureeR),
+            "Heure":(""+row[0].Heure).replace('T', ' ').slice(0,-5),
             }
             ]
 
@@ -312,7 +253,8 @@ $(document).ready(function(){
                 ]
             });
 
-            var nb_entry = 1000;
+            var nb_entry = parseInt(row[0].id,10);
+            if (nb_entry > 1000) nb_entry = 1000;
             table.buttons().container().appendTo( $('.col-sm-6:eq(0)', table.table().container()));
             for(i = 1; i < nb_entry; i++){
             table.rows.add([
@@ -320,8 +262,8 @@ $(document).ready(function(){
                     "Recette":row[i].Recette,
                     "Nom":row[i].Nom,
                     "Fréquence":row[i].FreqR,
-                    "DureeP":row[i].DureeR,
-                    "Heure":row[i].Heure
+                    "Durée":(""+row[i].DureeR),
+                    "Heure":(""+row[i].Heure).replace('T', ' ').slice(0,-5),
                 }
             ]).draw();
             }

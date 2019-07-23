@@ -167,7 +167,7 @@
 }
 
 .temps_recette{
-  top: 326%;
+  top: 370%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -188,7 +188,7 @@
 
 .tableur_temps_recette{
   left: 19%;
-  top: 339%;
+  top: 383%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
