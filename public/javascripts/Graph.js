@@ -43,7 +43,7 @@ $(function(){
         for (i = 9; i >= 0; i--){
             plis[i] = row[i].plis;
         }
-        document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
+        document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis-minute/heure';
         $.get('/dbIndex/AverageMin', {},function(row){
             document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
         });
@@ -67,16 +67,13 @@ $(function(){
                                     var x =GetTime();
                                     plis[9] = y_plis;
                                     series.addPoint([x, y_plis], true, true);
-                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
-                                    
-                                
-                                /*$.get('/dbIndex/AverageHour', {},function(row){
-                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis/heure';
-                                });*/
+                                    document.getElementById("plis/heure").innerHTML = row[0].plis + ' Plis-minute/heure';
                                 });
                             });
-                            $.get('/dbIndex/AverageMin', {},function(row){
-                                document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
+                            setInterval(function(){
+                                $.get('/dbIndex/AverageMin', {},function(row){
+                                    document.getElementById("plis/min").innerHTML = row[0].plis + ' Plis/min';
+                                },1000*60);
                             });
                         }, inter);
                     }
@@ -100,7 +97,7 @@ $(function(){
                 
         /////////----Titre Graphique----////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 title: {
-                    text: 'Plis par heure LEA',
+                    text: 'Plis/min par heure LEA',
                     align: 'center',
                     style: {
                         color: '#e0e0e3',
@@ -154,10 +151,10 @@ $(function(){
                                     style: {
                                         color: '#ff0000',
                                     },
-                                    format : '{value} plis/h'
+                                    format : '{value} plis/min'
                                 },
                             title: {
-                                text: 'plis/heure',
+                                text: 'Plis/min par heure LEA',
                     
                                 style: {
                                     color: '#ff0000',
@@ -172,7 +169,7 @@ $(function(){
 
                 //----Séies N°1----//
                 {
-                    name: 'plis/heure',
+                    name: 'Plis/min par heure LEA',
                     yAxis: 0,
                     data: dataserie('S'),
                     shadow: {
@@ -181,9 +178,7 @@ $(function(){
                         color: '#ff0000'
                     },
                     color: '#ff0000',
-                    tooltip:{
-                        valueSuffix : 'plis/heure'
-                    }
+                    
                 },
 
                 ]

@@ -11,7 +11,7 @@
 
 	<div class="Nb_plis_heure">
 		<img src="./images/veneer.png" class="veneer">
-		<p id="plis/heure" class="releves">Plis/heure</p>
+		<p id="plis/heure" class="releves">Plis-minute/heure</p>
 	</div>
 
 	<div class="Nb_plis_min">
@@ -24,12 +24,45 @@
 <!------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------>
 
-	<h1 class="production_equipe">Production par l'équipe</h1>
-      <div class="tableur_production_equipe">	
-      <table id="production_equipe" class="display" style="width:100%">
+
+  <h1 class="Prod">Production</h1>
+  <div class="tableur_Prod">	
+  <table id="Prod" class="display" style="width:100%">
+    <thead>
+      <tr>
+          <th>Date</th>
+          <th>Equipe</th>
+          <th>Panneau</th>
+          <th>Volume</th>
+          <th>Arrêt</th>
+          <th>TRS</th>
+      </tr>
+  </thead>
+  <tfoot>
+      <tr>
+          <th>Date</th>
+          <th>Equipe</th>
+          <th>Panneau</th>
+          <th>Volume</th>
+          <th>Arrêt</th>
+          <th>TRS</th>
+      </tr>
+  </tfoot>
+  </table>
+</div>
+
+<!------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------>
+
+	<h1 class="production_recette">Production détails</h1>
+      <div class="tableur_production_recette">	
+      <table id="production_recette" class="display" style="width:100%">
         <thead>
           <tr>
               <th>Equipe</th>
+              <th>Recette</th>
               <th>Placages</th>
               <th>Panneaux</th>
               <th>Piles</th>
@@ -37,69 +70,13 @@
               <th>Rebuts</th>
               <th>Début</th>
               <th>Fin</th>
+              <th>Temps d'arrêt</th>
+              <th>TRS</th>
           </tr>
       </thead>
       <tfoot>
           <tr>
             <th>Equipe</th>
-            <th>Placages</th>
-            <th>Panneaux</th>
-            <th>Piles</th>
-            <th>Volume</th>
-            <th>Rebuts</th>
-            <th>Début</th>
-            <th>Fin</th>
-          </tr>
-      </tfoot>
-      </table>
-    </div>
-
-      <h1 class="temps_prod">Arrêt par équipe</h1>
-      <div class="tableur_temps_prod">	
-      <table id="temps_prod" class="display" style="width:100%">
-        <thead>
-          <tr>
-              <th>Poste</th>
-              <th>Nom</th>
-              <th>Fréquence</th>
-              <th>Durée</th>
-              <th>Heure</th>
-          </tr>
-      </thead>
-      <tfoot>
-          <tr>
-            <th>Poste</th>
-            <th>Nom</th>
-            <th>Fréquence</th>
-            <th>Durée</th>
-            <th>Heure</th>
-          </tr>
-      </tfoot>
-      </table>
-	</div>
-
-<!------------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------------------>
-
-	<h1 class="production_recette">Production par recette</h1>
-      <div class="tableur_production_recette">	
-      <table id="production_recette" class="display" style="width:100%">
-        <thead>
-          <tr>
-              <th>Recette</th>
-              <th>Placages</th>
-              <th>Panneaux</th>
-              <th>Piles</th>
-              <th>Volume</th>
-              <th>Rebuts</th>
-              <th>Début</th>
-              <th>Fin</th>
-          </tr>
-      </thead>
-      <tfoot>
-          <tr>
             <th>Recette</th>
             <th>Placages</th>
             <th>Panneaux</th>
@@ -108,16 +85,19 @@
             <th>Rebuts</th>
             <th>Début</th>
             <th>Fin</th>
+            <th>Temps d'arrêt</th>
+            <th>TRS</th>
           </tr>
       </tfoot>
     </table>
   </div>
   
-  <h1 class="temps_recette">Arrêt par recette</h1>
+  <h1 class="temps_recette">Arrêt détails</h1>
       <div class="tableur_temps_recette">	
       <table id="temps_recette" class="display" style="width:100%">
         <thead>
           <tr>
+              <th>Equipe</th>
               <th>Recette</th>
               <th>Nom</th>
               <th>Fréquence</th>
@@ -127,6 +107,7 @@
       </thead>
       <tfoot>
           <tr>
+            <th>Equipe</th>
             <th>Recette</th>
             <th>Nom</th>
             <th>Fréquence</th>
@@ -135,6 +116,6 @@
           </tr>
       </tfoot>
       </table>
-	</div>
+  </div>
 </body>
 </html>

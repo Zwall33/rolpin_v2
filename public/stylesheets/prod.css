@@ -13,7 +13,7 @@
   background-color: #545050;
   height: 80px;/* défini la div en hauteur*/
   width: 33%;/* défini la div en largeur*/
-  top: 10%;
+  top: 5%;
   left: 19%; 
   position: absolute;
   text-align: center;
@@ -25,7 +25,7 @@
   background-color: #545050;
   height: 80px;/* défini la div en hauteur*/
   width: 33%;/* défini la div en largeur*/
-  top: 10%;
+  top: 5%;
   left: 60%;
   position: absolute;
   text-align: center;
@@ -68,7 +68,7 @@
 
 /************************************************************************************************************************************************************/
 
-.production_equipe{
+.Prod{
   top: 90%;
   left: 200px;
   position: absolute;
@@ -88,9 +88,9 @@
   box-shadow: 0px 0px 0px 0 rgba(51, 51, 51, 0.7), 3px 5px 5px 0 rgba(51, 51, 51, 1);
 }
 
-.tableur_production_equipe{
+.tableur_Prod{
   left: 19%;
-  top: 102%;
+  top: 107%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -101,7 +101,7 @@
 }
 
 .temps_prod{
-  top: 168%;
+  top: 198%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -122,7 +122,7 @@
 
 .tableur_temps_prod{
   left: 19%;
-  top: 181%;
+  top: 216%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -135,7 +135,7 @@
 /************************************************************************************************************************************************************/
 
 .production_recette{
-  top: 247%;
+  top: 198%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -156,7 +156,7 @@
 
 .tableur_production_recette{
   left: 19%;
-  top: 260%;
+  top: 216%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;
@@ -167,7 +167,7 @@
 }
 
 .temps_recette{
-  top: 370%;
+  top: 322%;
   left: 200px;
   position: absolute;
   padding:1%;
@@ -188,7 +188,7 @@
 
 .tableur_temps_recette{
   left: 19%;
-  top: 383%;
+  top: 340%;
   position: absolute;
   box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.5), 3px 5px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: whitesmoke;

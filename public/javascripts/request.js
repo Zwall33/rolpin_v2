@@ -1,10 +1,6 @@
 class Request {
-    static getDefautTrLEA(){
+    static getDefautLEA(){
         let sql = "SELECT * FROM Defauts ORDER BY id DESC";
-        return sql;
-    }
-    static getInitAverageMin(){
-        let sql = 'SELECT * FROM Moyenne_min ORDER BY Heure DESC LIMIT 10';
         return sql;
     }
     static getInitAverageHeure(){
@@ -20,19 +16,15 @@ class Request {
         return sql;
     }
     static getProdinShift(){
-        let sql = 'SELECT * FROM shift ORDER BY Heure DESC';
+        let sql = 'SELECT * FROM shift ORDER BY id DESC';
         return sql;
     }
-    static getProdinTotal(){
-        let sql = 'SELECT * FROM total ORDER BY Heure DESC';
+    static getTempsArret(){
+        let sql = 'SELECT * FROM DureeRArret ORDER BY id DESC';
         return sql;
     }
-    static getTempsArretProd(){
-        let sql = 'SELECT * FROM DureePArret ORDER BY Heure DESC';
-        return sql;
-    }
-    static getTempsArretRecette(){
-        let sql = 'SELECT * FROM DureeRArret ORDER BY Heure DESC';
+    static getProduction(){
+        let sql = 'SELECT * FROM Production ORDER BY id DESC';
         return sql;
     }
 }
