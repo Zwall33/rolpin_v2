@@ -3,8 +3,8 @@ import mysql from "mysql";
 const config = {
     connectionLimit : 10,
     host     : 'localhost',
-    user     : 'lea-server',
-    password : 'lea-server',
+    user     : 'db_lea',
+    password : 'db_lea',
     database : 'lea_rolpin',
     debug    : false
 }

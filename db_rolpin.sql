@@ -1,4 +1,8 @@
 CREATE DATABASE lea_rolpin;
+CREATE USER 'db_lea'@'127.0.0.1' IDENTIFIED BY 'db_lea';
+CREATE USER 'lea-server'@'127.0.0.1' IDENTIFIED BY 'lea-server';
+GRANT ALL PRIVILEGES ON lea_rolpin.* TO 'db_lea'@'127.0.0.1';
+GRANT ALL PRIVILEGES ON lea_rolpin.* TO 'lea-server'@'127.0.0.1';
 USE lea_rolpin;
 
 CREATE TABLE Production (id INT AUTO_INCREMENT, Equipe TINYTEXT, Date TEXT, Panneau INT, Volume FLOAT, Duree TEXT, TRS FLOAT, PRIMARY KEY (id));
